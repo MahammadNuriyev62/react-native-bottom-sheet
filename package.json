@@ -1,0 +1,22 @@
+{
+  "name": "react-native-bottom-sheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MahammadNuriyev62/react-native-bottom-sheet.git"
+  },
+  "keywords": [
+    "react-native", "bottom-sheet"
+  ],
+  "author": "beast_engine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MahammadNuriyev62/react-native-bottom-sheet/issues"
+  },
+  "homepage": "https://github.com/MahammadNuriyev62/react-native-bottom-sheet#readme"
+}
