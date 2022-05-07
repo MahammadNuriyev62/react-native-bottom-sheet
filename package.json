@@ -1,6 +1,6 @@
 {
-  "name": "react-native-bottom-sheet",
-  "version": "1.0.0",
+  "name": "beast-react-native-bottom-sheet",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,12 +11,16 @@
     "url": "git+https://github.com/MahammadNuriyev62/react-native-bottom-sheet.git"
   },
   "keywords": [
-    "react-native", "bottom-sheet"
+    "react-native",
+    "bottom-sheet"
   ],
   "author": "beast_engine",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MahammadNuriyev62/react-native-bottom-sheet/issues"
   },
-  "homepage": "https://github.com/MahammadNuriyev62/react-native-bottom-sheet#readme"
+  "homepage": "https://github.com/MahammadNuriyev62/react-native-bottom-sheet#readme",
+  "dependencies": {
+    "beast-react-native-bottom-sheet": "^1.0.0"
+  }
 }
