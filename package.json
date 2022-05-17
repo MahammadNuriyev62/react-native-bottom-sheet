@@ -1,6 +1,6 @@
 {
-  "name": "beast-react-native-bottom-sheet",
-  "version": "1.0.1",
+  "name": "react-native-bottom-sheet-component",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,4 @@
     "url": "https://github.com/MahammadNuriyev62/react-native-bottom-sheet/issues"
   },
   "homepage": "https://github.com/MahammadNuriyev62/react-native-bottom-sheet#readme",
-  "dependencies": {
-    "beast-react-native-bottom-sheet": "^1.0.0"
-  }
 }

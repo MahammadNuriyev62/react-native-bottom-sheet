@@ -12,13 +12,17 @@ const VEL_LIMIT = 100
 const DELTA_TRUE = 100
 const DELTA_FALSE = 100
 const BACK_LAYER_ERROR = 10
+const BACK_LAYER_OPACITY = 0.3
+const BACK_LAYER_COLOR = 'black'
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 // TRANSLATE_Y_HIDDEN > TRANSLATE_Y_CLOSED > TRANSLATE_Y_OPENED
 
-const BottomSheet = ({ children, onStatusChange, boundaries, style, status: _status, setStatus: _setStatus, contentAnimatedOpacity, CustomGrip,
-    deltaTrue = DELTA_TRUE, deltaFalse = DELTA_FALSE, availableStatuses = Object.values(Status), isInteractableWhen = [Status.OPENED], hideOnZeroOpacity = true
+const BottomSheet = ({
+    children, onStatusChange, boundaries, style, status: _status, setStatus: _setStatus, contentAnimatedOpacity, CustomGrip,
+    deltaTrue = DELTA_TRUE, deltaFalse = DELTA_FALSE, availableStatuses = Object.values(Status), isInteractableWhen = [Status.OPENED], hideOnZeroOpacity = true,
+    backLayerColor = BACK_LAYER_COLOR, backLayerOpacity = BACK_LAYER_OPACITY
 }) => {
 
     const height = style?.height || SCREEN_HEIGHT - 100
@@ -70,7 +74,7 @@ const BottomSheet = ({ children, onStatusChange, boundaries, style, status: _sta
 
     const opacityOfLayer = translateY.interpolate({
         inputRange: [TRANSLATE_Y_CLOSED, TRANSLATE_Y_HIDDEN],
-        outputRange: [0.3, 0],
+        outputRange: [backLayerOpacity, 0],
         extrapolate: 'clamp',
     })
 
@@ -103,7 +107,7 @@ const BottomSheet = ({ children, onStatusChange, boundaries, style, status: _sta
 
     return <>
         {isBackLayerVisible && <TouchableWithoutFeedback style={{}} onPress={() => { setStatus(BottomSheet.Status.HIDDEN); }}>
-            <Animated.View style={{ position: 'absolute', top: 0, left: 0, backgroundColor: 'black', opacity: opacityOfLayer, height: SCREEN_HEIGHT, width: '100%', zIndex: 10000 }} />
+            <Animated.View style={{ position: 'absolute', top: 0, left: 0, backgroundColor: backLayerColor, opacity: opacityOfLayer, height: SCREEN_HEIGHT, width: '100%', zIndex: 10000 }} />
         </TouchableWithoutFeedback>}
         <Animated.View style={{ transform: [{ translateY }], position: 'absolute', width: '100%', zIndex: 20000, bottom: 0 }} >
             <GestureHandlerRootView>
