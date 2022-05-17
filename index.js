@@ -73,7 +73,7 @@ const BottomSheet = ({
     }, [status, deltaFalse, deltaTrue]);
 
     const opacityOfLayer = translateY.interpolate({
-        inputRange: [TRANSLATE_Y_CLOSED, TRANSLATE_Y_HIDDEN],
+        inputRange: [availableStatuses.includes(Status.CLOSED) ? Status.CLOSED : Status.OPENED, TRANSLATE_Y_HIDDEN],
         outputRange: [backLayerOpacity, 0],
         extrapolate: 'clamp',
     })
